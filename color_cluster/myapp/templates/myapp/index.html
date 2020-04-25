@@ -1,0 +1,23 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>img_prediction</title>
+  <link rel="stylesheet" type="text/css"
+       href="{% static 'static/myapp/css/style.css' %}" />
+</head>
+<body>
+<p>{{pred1}}<br>
+   {{pred2}}<br>
+   {{pred3}}<br>
+</p>
+<table>
+<form action="{% url 'index' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <tr><td></td><td><input type="submit" value="click" /></td></tr>
+</form>
+</table>
+</body>
+</html>
